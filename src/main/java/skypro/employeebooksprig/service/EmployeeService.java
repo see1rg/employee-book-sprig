@@ -51,7 +51,7 @@ public class EmployeeService {
     }
 
     public Collection<Employee> getEmployeesHighSalary() {
-        double average = employees.values().stream().mapToInt(Employee::getSalary).average().orElseThrow();
+        double average = employees.values().stream().mapToInt(Employee::getSalary).average().orElse(0);
 
         return (employees.values()
                 .stream()
